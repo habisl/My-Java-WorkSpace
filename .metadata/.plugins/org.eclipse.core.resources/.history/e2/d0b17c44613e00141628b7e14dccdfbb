@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+
+/**
+ * @author 1001393 Habibul Islam
+ *
+ */
+
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+@SuppressWarnings("serial")
+public class MyHelloWorld extends JFrame implements ActionListener {
+	private JLabel label = new JLabel("Write your first name?");
+	private JTextArea output = new JTextArea();
+	private JTextField input = new JTextField();
+	private JLabel label1 = new JLabel("Write your family name?");
+	private JTextArea output1 = new JTextArea();
+	private JTextField input1 = new JTextField();
+	
+	private JButton button = new JButton("READ");
+
+	public static void main(String[] args) {
+		new MyHelloWorld();
+
+	}
+	public MyHelloWorld(){
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(500,200);
+		JPanel panel =new JPanel(new GridLayout(4,1));
+		panel.add(label);
+		panel.add(input);
+		panel.add(label1);
+		
+		panel.add(input1);
+		panel.add(button);
+		panel.add(output);
+		panel.add(output1);
+		Container contentPane = getContentPane();
+		contentPane.add(panel);
+		button.addActionListener(this);
+		setVisible(true);
+	}
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		output.setText(input1.getText() + "  " + input.getText() );
+		
+		
+	}
+	
+
+}
+
+
+
+
